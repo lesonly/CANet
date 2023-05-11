@@ -56,8 +56,7 @@ class Test(object):
             for image, mask, (H, W), maskpath in self.loader:
                 image, mask            = image.cuda().float(), mask.cuda().float()
                 start_time = time.time()
-                #out2, out3, out4, out5 = self.net(image)
-                out2, out3, out4, out5,coarse_out2= self.net(image)
+                out2, out3, out4, out5,out5_c,out4_c= self.net(image)
                 pred                   = torch.sigmoid(out2)               
                 torch.cuda.synchronize()
                 end_time = time.time()
@@ -89,10 +88,10 @@ class Test(object):
     def save(self):
         with torch.no_grad():
             for image, mask, (H, W), name in self.loader:
-                out2, out3, out4, out5,coarse_out2 = self.net(image.cuda().float())               
+                out2, out3, out4, out5,out5_c,out4_c = self.net(image.cuda().float())               
                 out2     = F.interpolate(out2, size=(H,W), mode='bilinear')
                 pred     = (torch.sigmoid(out2[0,0])*255).cpu().numpy()
-                head     = './result/SENet/'+ self.cfg.datapath.split('/')[-1]#.format(TAG) 
+                head     = './result/CANet/'+ self.cfg.datapath.split('/')[-1]#.format(TAG) 
                 if not os.path.exists(head):
                     os.makedirs(head)
                 cv2.imwrite(head+'/'+name[0],np.uint8(pred))
