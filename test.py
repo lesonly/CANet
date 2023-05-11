@@ -17,7 +17,7 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader
 #from tensorboardX import SummaryWriter
 from lib import dataset
-from senet import SENet
+from CANet import ContextNet
 import time
 import logging as logger
 
@@ -30,9 +30,8 @@ logger.basicConfig(level=logger.INFO, format='%(levelname)s %(asctime)s %(filena
                            filename="test_%s.log"%(TAG), filemode="w")
 
 
-# DATASETS = [ './data/PASCAL-S', './data/ECSSD', './data/HKU-IS',
-#              './data/DUT-OMRON', './data/DUTS']
-DATASETS = ['./data/PASCAL-S']
+DATASETS = [ './data/PASCAL-S', './data/ECSSD', './data/HKU-IS',
+              './data/DUT-OMRON', './data/DUTS']
 
 
 class Test(object):
@@ -100,9 +99,9 @@ class Test(object):
 
 if __name__=='__main__':
    
-    fia =  './ours/SENet'    
+    fia =  './ours/ContextNet'    
     for e in DATASETS:
-        t =Test(dataset, e, SENet,fia)
+        t =Test(dataset, e, ContextNet,fia)
         t.accuracy()
-        #t.save()
+        t.save()
 
