@@ -17,7 +17,7 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader
 #from tensorboardX import SummaryWriter
 from lib import dataset
-from CANet import ContextNet
+from canet import ContextNet
 import time
 import logging as logger
 
