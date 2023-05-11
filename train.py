@@ -10,7 +10,7 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from tensorboardX import SummaryWriter
 from data4 import dataset
-from CANet import ContextNet
+from canet import ContextNet
 import logging as logger
 from lib4.data_prefetcher import DataPrefetcher
 from lib4.lr_finder import LRFinder
