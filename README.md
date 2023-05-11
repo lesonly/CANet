@@ -1,4 +1,4 @@
-# SENet
+# CANet
 
 
 ## dependencies 
@@ -39,11 +39,12 @@ After the preparation, run this commond to generate the final saliency maps.
  python test.py 
 ```
 
-We provide the trained model file ([Baidu drive](link：https://pan.baidu.com/s/12Q0RGrQFch5oHJ-4xsIbcQ code：p50u), and run this command to check its completeness:
+We provide the trained model file ([Baidu drive](link：https://pan.baidu.com/s/189q0kY0PKmTdfkCMijjzpQ?pwd=gasy 
+code：gasy), and run this command to check its completeness:
 ```
-cksum EAFNet 
+cksum CANet 
 ```
-you will obtain the result `EAFNet`.
+you will obtain the result `CANet`.
 
 ## evaluation
 
