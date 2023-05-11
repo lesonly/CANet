@@ -99,7 +99,7 @@ class Test(object):
 
 if __name__=='__main__':
    
-    fia =  './ours/ContextNet'    
+    fia =  './ours/CANet'    
     for e in DATASETS:
         t =Test(dataset, e, ContextNet,fia)
         t.accuracy()
