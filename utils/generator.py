@@ -41,12 +41,14 @@ def make_one_hot(input, x,num_classes=2,flag=0):
 
     #result=torch.squeeze(result)
     result=result.squeeze(dim=1)
-    result1=result.reshape((result.shape[0], result.shape[3], -1),order='F')# transfer N C H*W
+    result=result.numpy()
+    result1=result.reshape(result.shape[0],-1,2,order='F')# transfer N C H*W    
+    result1 = torch.tensor(result1)
     result2=result1.permute(0,2,1)
     result1=result1.to(torch.float32)
     result2=result2.to(torch.float32)
 
-    A = torch.bmm(result2, result1) 
+    A = torch.bmm(result1, result2) 
     A= torch.unsqueeze(A,1)
     return A
 
