@@ -41,7 +41,7 @@ def make_one_hot(input, x,num_classes=2,flag=0):
 
     #result=torch.squeeze(result)
     result=result.squeeze(dim=1)
-    result1=result.reshape((result.shape[0], result.shape[3], -1))# transfer N C H*W
+    result1=result.reshape((result.shape[0], result.shape[3], -1),order='F')# transfer N C H*W
     result2=result1.permute(0,2,1)
     result1=result1.to(torch.float32)
     result2=result2.to(torch.float32)
