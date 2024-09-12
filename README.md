@@ -52,4 +52,24 @@ We provide the predicted saliency maps on five benchmark datasets,including PASC
 
 You can use the evaluation code in the folder  "eval_code" for fair comparisons, but you may need to revise the `algorithms` , `data_root`, and `maps_root` defined in the `main.m`. 
 
+## Citation
+
+We really hope this repo can contribute the conmunity, and if you find this work useful, please use the following citation:
+
+@article{DBLP:journals/eaai/ZhuWT24, <br>
+  author       = {Ge Zhu and <br>
+                  Lei Wang and <br>
+                  Jinping Tang}, <br>
+  title        = {Learning discriminative context for salient object detection}, <br>
+  journal      = {Eng. Appl. Artif. Intell.}, <br>
+  volume       = {131}, <br>
+  pages        = {107820}, <br>
+  year         = {2024}, <br>
+  url          = {https://doi.org/10.1016/j.engappai.2023.107820}, <br>
+  doi          = {10.1016/J.ENGAPPAI.2023.107820}, <br>
+  timestamp    = {Fri, 31 May 2024 21:06:48 +0200}, <br>
+  biburl       = {https://dblp.org/rec/journals/eaai/ZhuWT24.bib}, <br>
+  bibsource    = {dblp computer science bibliography, https://dblp.org} <br>
+}
+
 
